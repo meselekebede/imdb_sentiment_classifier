@@ -11,7 +11,7 @@ import os
 DATA_PATH = "data/IMDB_Dataset.csv"
 MODEL_PATH = "models/model.pkl"
 VECTORIZER_PATH = "models/vectorizer.pkl"
-SAMPLE_SIZE = 20000  # we can change this if needed
+SAMPLE_SIZE = 5000  # we can change this if needed
 
 def load_data():
     df = pd.read_csv(DATA_PATH)
