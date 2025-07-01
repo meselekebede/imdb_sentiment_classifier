@@ -1,116 +1,85 @@
-# IMDb Sentiment Classifier
+# 🎬 IMDb Sentiment Classifier
 
-A complete **text classification pipeline** using **scikit-learn**, trained on the [IMDb Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews ), that classifies movie reviews as **positive** or **negative**.
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?logo=scikit-learn&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-%23000.svg?logo=flask&logoColor=white)
 
-🔧 Features:
-- **Deep text preprocessing**: lowercasing, HTML tag removal, lemmatization, stopword removal
-- TF-IDF vectorization
-- Logistic Regression classifier
-- Command-line prediction tool (`predict.py`)
-- Visually appealing Flask web app with HTML/CSS frontend
-- Model persistence (saved as `.pkl` files)
+A production-grade **text classification pipeline** using **scikit-learn** that analyzes movie reviews with 91% accuracy. Built with modern NLP preprocessing and deployed via both CLI and web interfaces.
 
 ---
 
-## 📁 Project Structure
+## ✨ Key Features
+
+| Feature | Description |
+|---------|-------------|
+| 🧹 **Deep Text Cleaning** | HTML tag removal, lemmatization, stopword filtering, and URL/email sanitization |
+| 📊 **TF-IDF Vectorization** | 5,000 feature vectorization with sublinear term frequency scaling |
+| 🤖 **ML Model** | Logistic Regression with L2 regularization (C=1.0) |
+| 🌐 **Dual Interface** | Flask web UI + Python CLI prediction tool |
+| 💾 **Model Persistence** | Serialized model/vectorizer with joblib |
+
+---
+
+## 📂 Project Structure
+
+```bash
 imdb_sentiment_classifier/
-
-│
-├── templates/
-
-│ └── index.html # Web UI template
-
-│
-├── static/
-
-│ └── style.css # Styling for the UI
-
-│
-
-├── models/
-
-│ ├── model.pkl # Trained ML model
-
-│ └── vectorizer.pkl # TF-IDF Vectorizer
-
-│
-
-├── data/
-
-│ └── IMDB_Dataset.csv # Kaggle dataset
-
-│
-
-├── utils.py # Text preprocessing utilities
-
-├── train.py # Train the model
-
-├── predict.py # CLI prediction script
-
-├── app.py # Flask web app
-
-├── requirements.txt # Python dependencies
-
-└── README.md # You are here
-
-
----
-
-## 🧰 Requirements
-
-Install dependencies:
-
-bash \
-pip install -r requirements.txt
-
-Required packages:
-
-scikit-learn\
-pandas\
-joblib\
-flask\
-nltk
-
-
-✅ Make sure to run this once to download NLTK resources:\
-bash \
-python -m nltk.downloader stopwords wordnet
-
-📥 Dataset Setup
+├── 📄 app.py                 # Flask web server
+├── 📄 predict.py             # CLI prediction tool
+├── 📄 train.py               # Model training pipeline
+├── 📄 utils.py               # Text processing utilities
+├── 📄 requirements.txt       # Python dependencies
+├── 📂 models/                # Serialized artifacts
+│   ├── model.pkl            # Trained classifier
+│   └── vectorizer.pkl       # TF-IDF vectorizer
+├── 📂 static/                # Web assets
+│   └── style.css            # Modern UI styling
+├── 📂 templates/             # HTML templates
+│   └── index.html           # Responsive web interface
+└── 📂 data/                  # Dataset storage
+    └── IMDB_Dataset.csv     # 50K reviews dataset
+```
+# 🚀 Quick Start
+clone this repo
+```bash
+git clone https://github.com/meselekebede/imdb_sentiment_classifier.git
+```
+Install Dependencies
+```bash
+pip install -r requirements.txt 
+python -m nltk.downloader stopwords wordnet  # Required NLTK resources
+```
+# 📥 Dataset Setup
 Download the dataset from:
 [IMDb Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews )\
 Extract the ZIP file
-Place the CSV file inside the data/ folder:\
-data/ \
+Place the CSV file inside the data/ folder:
+```bash
+data/ 
 └── IMDB_Dataset.csv
-
+```
 # 🏋️ Train the Model
-To train the model (uses a subset of 5,000 samples by default):\
-bash \
+To train the model (uses a subset of 5,000 samples by default):
+```bash
 python train.py
-
-This will:
-
-Load and preprocess the dataset \
-Apply deep text cleaning (lowercasing, lemmatization, etc.) \
-Train a Logistic Regression classifier using TF-IDF features \
-Save the trained model and vectorizer in the models/ directory \
- 
-
-Example output: \
-Model Accuracy: 0.91 \
+```
+```bash
+Example output: 
+Model Accuracy: 0.91 
 Model and vectorizer saved.
-
+```
 # 🔮 Predict Sentiment via CLI
 Use the command-line tool to classify any review:
-
+```bash
 python predict.py "I absolutely loved this movie!"
+```
 
 # 💻 Run the Flask Web App
 
-Launch the web interface: \
+Launch the web interface: 
+```bash
 python app.py
-
+```
 Then open your browser and go to:
 
 👉 http://localhost:5000
@@ -122,37 +91,42 @@ Get real-time sentiment analysis result \
 See confidence score in a styled box
 
 # 🛠️ Code Overview
-
-utils.py 
+```bash
+utils.py
+```
 
 Contains reusable function for deep text preprocessing:
 
-Lowercasing \
-Removing HTML tags, URLs, emails \
-Removing punctuation and digits \
-Tokenizing, removing stopwords, lemmatizing
+1. Lowercasing 
+2. Removing HTML tags, URLs, emails 
+3. Removing punctuation and digits 
+4. Tokenizing, removing stopwords, lemmatizing
 
-
-train.py \
+```bash
+train.py
+```
 Trains the model:
 
-Loads and preprocesses the dataset \
-Splits into train/test sets \
-Applies TF-IDF transformation \
-Trains and saves the model + vectorizer
+1. Loads and preprocesses the dataset 
+2. Splits into train/test sets 
+3. Applies TF-IDF transformation 
+4. Trains and saves the model + vectorizer
 
-
-predict.py \
+```bash
+predict.py
+```
 CLI tool:
 
-Loads the saved model and vectorizer \
-Accepts input text \
-Outputs prediction and confidence
+1. Loads the saved model and vectorizer 
+2. Accepts input text 
+3. Outputs prediction and confidence
 
+```bash
+app.py
+```
 
-app.py \
 Flask web application:
 
-Renders HTML form \
-Handles POST requests \
-Returns styled prediction results 
+1. Renders HTML form 
+2. Handles POST requests 
+3. Returns styled prediction results 
