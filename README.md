@@ -82,7 +82,7 @@ python app.py
 ```
 Then open your browser and go to:
 
-👉 http://localhost:5000
+👉 http://localhost:5000 "this may be diffrent based on your machine so you can copy and past from your terminal"
 
 You’ll see a clean, modern UI where you can:
 
