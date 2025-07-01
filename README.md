@@ -95,7 +95,7 @@ Load and preprocess the dataset \
 Apply deep text cleaning (lowercasing, lemmatization, etc.) \
 Train a Logistic Regression classifier using TF-IDF features \
 Save the trained model and vectorizer in the models/ directory \
-python -m nltk.downloader stopwords wordnet 
+ 
 
 Example output: \
 Model Accuracy: 0.91 \
