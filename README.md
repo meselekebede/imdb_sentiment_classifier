@@ -1,4 +1,4 @@
-# IMDb Sentiment Classifier
+8# IMDb Sentiment Classifier
 
 A complete **text classification pipeline** using **scikit-learn**, trained on the [IMDb Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews ), that classifies movie reviews as **positive** or **negative**.
 
@@ -85,7 +85,7 @@ data/ \
 └── IMDB_Dataset.csv
 
 # 🏋️ Train the Model
-To train the model (uses a subset of 5,000 samples by default):
+To train the model (uses a subset of 5,000 samples by default):\
 bash \
 python train.py
 
