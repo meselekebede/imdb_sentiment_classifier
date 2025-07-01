@@ -4,7 +4,7 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?logo=scikit-learn&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-%23000.svg?logo=flask&logoColor=white)
 
-A production-grade **text classification pipeline** using **scikit-learn** that analyzes movie reviews with 91% accuracy. Built with modern NLP preprocessing and deployed via both CLI and web interfaces.
+A production-grade **text classification pipeline** using **scikit-learn** that analyzes movie reviews with 88% accuracy. Built with modern NLP preprocessing and deployed via both CLI and web interfaces.
 
 ---
 
