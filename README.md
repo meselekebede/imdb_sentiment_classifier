@@ -22,7 +22,7 @@ A production-grade **text classification pipeline** using **scikit-learn** that 
 
 ## 📂 Project Structure
 
-```bash
+```
 imdb_sentiment_classifier/
 ├── 📄 app.py                 # Flask web server
 ├── 📄 predict.py             # CLI prediction tool
@@ -41,11 +41,11 @@ imdb_sentiment_classifier/
 ```
 # 🚀 Quick Start
 clone this repo
-```bash
+```
 git clone https://github.com/meselekebede/imdb_sentiment_classifier.git
 ```
 Install Dependencies
-```bash
+```
 pip install -r requirements.txt 
 python -m nltk.downloader stopwords wordnet  # Required NLTK resources
 ```
@@ -54,35 +54,35 @@ Download the dataset from:
 [IMDb Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews )\
 Extract the ZIP file
 Place the CSV file inside the data/ folder:
-```bash
+```
 data/ 
 └── IMDB_Dataset.csv
 ```
 # 🏋️ Train the Model
 To train the model (uses a subset of 5,000 samples by default):
-```bash
+```
 python train.py
 ```
-```bash
+```
 Example output: 
 Model Accuracy: 0.91 
 Model and vectorizer saved.
 ```
 # 🔮 Predict Sentiment via CLI
 Use the command-line tool to classify any review:
-```bash
+```
 python predict.py "I absolutely loved this movie!"
 ```
 
 # 💻 Run the Flask Web App
 
 Launch the web interface: 
-```bash
+```
 python app.py
 ```
 Then open your browser and go to:
 
-👉 http://localhost:5000 "this may be diffrent based on your machine so you can copy and past from your terminal"
+👉 http://localhost:5000 "this may be different based on your machine so you can copy and past from your terminal"
 
 You’ll see a clean, modern UI where you can:
 
@@ -91,7 +91,7 @@ Get real-time sentiment analysis result \
 See confidence score in a styled box
 
 # 🛠️ Code Overview
-```bash
+```
 utils.py
 ```
 
@@ -102,7 +102,7 @@ Contains reusable function for deep text preprocessing:
 3. Removing punctuation and digits 
 4. Tokenizing, removing stopwords, lemmatizing
 
-```bash
+```
 train.py
 ```
 Trains the model:
@@ -112,7 +112,7 @@ Trains the model:
 3. Applies TF-IDF transformation 
 4. Trains and saves the model + vectorizer
 
-```bash
+```
 predict.py
 ```
 CLI tool:
@@ -121,7 +121,7 @@ CLI tool:
 2. Accepts input text 
 3. Outputs prediction and confidence
 
-```bash
+```
 app.py
 ```
 
