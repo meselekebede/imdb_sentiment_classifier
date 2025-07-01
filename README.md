@@ -65,20 +65,22 @@ pip install -r requirements.txt
 
 Required packages:
 
-scikit-learn
-pandas
-joblib
-flask
+scikit-learn\
+pandas\
+joblib\
+flask\
 nltk
-✅ Make sure to run this once to download NLTK resources:
+
+
+✅ Make sure to run this once to download NLTK resources:\
 bash \
 python -m nltk.downloader stopwords wordnet
 
 📥 Dataset Setup
 Download the dataset from:
-[IMDb Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews )
+[IMDb Dataset of 50K Movie Reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews )\
 Extract the ZIP file
-Place the CSV file inside the data/ folder:
+Place the CSV file inside the data/ folder:\
 data/ \
 └── IMDB_Dataset.csv
 
